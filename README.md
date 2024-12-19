@@ -88,21 +88,13 @@ The application will start at `http://127.0.0.1:5000`.
   - `q` (optional): Search term.
   - `page` (default: 1): Page number.
   - `per_page` (default: 5): Number of books per page.
-- **Response:**
+- **Request:**
   ```json
-  {
-    "books": [
-      {
-        "id": 1,
-        "title": "Book Title",
-        "author": "Author Name",
-        "year": 2024,
-        "genre": "Fiction"
-      }
-    ],
-    "total": 1
-  }
+  http://127.0.0.1:5000/books?q=mockingbird&page=1&per_page=5
   ```
+- **Response:**
+  ![image](https://github.com/user-attachments/assets/81ae8f71-3c3b-43a7-864d-176bfa988481)
+
 
 #### 2. Add a New Book
 
@@ -113,22 +105,15 @@ The application will start at `http://127.0.0.1:5000`.
 - **Body:**
   ```json
   {
-    "title": "Book Title",
-    "author": "Author Name",
-    "year": 2024,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "year": 1960,
     "genre": "Fiction"
   }
   ```
 - **Response:**
-  ```json
-  {
-    "id": 1,
-    "title": "Book Title",
-    "author": "Author Name",
-    "year": 2024,
-    "genre": "Fiction"
-  }
-  ```
+  ![image](https://github.com/user-attachments/assets/182615b6-afcb-4cf4-8ef2-b9b0219164f9)
+
 
 #### 3. Get, Update, or Delete a Specific Book
 
@@ -138,8 +123,14 @@ The application will start at `http://127.0.0.1:5000`.
   - `Authorization: secure-token`
 - **Response:**
   - `GET`: Book details.
+    ![image](https://github.com/user-attachments/assets/e6580bf3-8cac-4da7-b88c-307207721f33)
+
   - `PUT`: Updated book details.
+    ![image](https://github.com/user-attachments/assets/1be619d2-bf04-466f-a163-94a9f708de8f)
+
   - `DELETE`: Deletion confirmation.
+    ![image](https://github.com/user-attachments/assets/f6cb9621-2522-482e-8c8c-3a5967c787a3)
+
 
 ### **Members**
 
@@ -150,16 +141,7 @@ The application will start at `http://127.0.0.1:5000`.
 - **Headers:**
   - `Authorization: secure-token`
 - **Response:**
-  ```json
-  [
-    {
-      "id": 1,
-      "name": "Member Name",
-      "email": "email@example.com",
-      "phone": "1234567890"
-    }
-  ]
-  ```
+  ![image](https://github.com/user-attachments/assets/104ebb1f-941b-4ecd-9c8a-7323e4b51ba6)
 
 #### 2. Add a New Member
 
@@ -169,21 +151,15 @@ The application will start at `http://127.0.0.1:5000`.
   - `Authorization: secure-token`
 - **Body:**
   ```json
-  {
-    "name": "Member Name",
-    "email": "email@example.com",
-    "phone": "1234567890"
+   {
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "phone": "9876543210"
   }
   ```
 - **Response:**
-  ```json
-  {
-    "id": 1,
-    "name": "Member Name",
-    "email": "email@example.com",
-    "phone": "1234567890"
-  }
-  ```
+  ![image](https://github.com/user-attachments/assets/abaeb123-61fb-47ed-96d6-67a16795923d)
+
 
 #### 3. Get, Update, or Delete a Specific Member
 
@@ -193,20 +169,20 @@ The application will start at `http://127.0.0.1:5000`.
   - `Authorization: secure-token`
 - **Response:**
   - `GET`: Member details.
+    ![image](https://github.com/user-attachments/assets/328766b1-3044-4f16-b17d-3dea7a1f778d)
+
   - `PUT`: Updated member details.
+    ![image](https://github.com/user-attachments/assets/1cbafa19-30dc-4e95-acb8-f42f5aa8afad)
+
   - `DELETE`: Deletion confirmation.
+    ![image](https://github.com/user-attachments/assets/4fdb7855-5de0-4aa4-9dd2-ad4616d9fc60)
+
 
 ---
 
 ## Authorization
 
-The API requires an `Authorization` header with the value `secure-token`.
-
-Example:
-
-```bash
-curl -H "Authorization: secure-token" http://127.0.0.1:5000/books
-```
+The API requires an `Authorization` header with the value `secure-token`. We have added a token in the header named Authorization with the value of the field as mentioned in the code. This mocks authorization feature.
 
 ---
 
